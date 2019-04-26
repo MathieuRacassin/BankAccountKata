@@ -24,7 +24,7 @@ namespace BankAccountKataTest
             BankAccount bankAccount = new BankAccount();
             Deposit deposit = new Deposit(10);
 
-            bankAccount.MakeDeposit(deposit);
+            bankAccount.MakeDeposit(10);
 
             double amount = bankAccount.GetAmount();
 
@@ -35,13 +35,10 @@ namespace BankAccountKataTest
         public void ClientMakesThreeDepositsOnHisNewBankAccountWithShouldGiveTheSumOfTheThreeDeposits()
         {
             Client client = new Client();
-            Deposit deposit1 = new Deposit(10);
-            Deposit deposit2 = new Deposit(10);
-            Deposit deposit3 = new Deposit(10);
 
-            client.BankAccount.MakeDeposit(deposit1);
-            client.BankAccount.MakeDeposit(deposit2);
-            client.BankAccount.MakeDeposit(deposit3);
+            client.BankAccount.MakeDeposit(10);
+            client.BankAccount.MakeDeposit(10);
+            client.BankAccount.MakeDeposit(10);
 
             double amount = client.BankAccount.GetAmount();
 

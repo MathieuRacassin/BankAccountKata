@@ -22,14 +22,18 @@ namespace BankAccountKata
             return amount;
         }
 
-        public void MakeDeposit(Deposit deposit)
+        public void MakeDeposit(double depositAmount)
         {
-            operations.OperationList.Add(deposit);
+            Deposit deposit = new Deposit(depositAmount);
+            this.operations.AddOperation(deposit);
         }
 
         public double MakeWithDrawalOf(double withDrawalAmount)
         {
-                return 10;
+            WithDrawal withDrawal = new WithDrawal(withDrawalAmount);
+            this.operations.AddOperation(withDrawal);
+            return 10;
         }
+
     }
 }
