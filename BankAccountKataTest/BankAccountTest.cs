@@ -48,6 +48,18 @@ namespace BankAccountKataTest
             amount.Should().Be(30);
         }
 
+        [TestMethod]
+        public void ClientMakeOneDepositOnHisBankAccount()
+        {
+            Client client = new Client();
+            Deposit deposit1 = new Deposit(10);
+
+            client.BankAccount.MakeDeposit(deposit1);
+
+            double amount = client.BankAccount.GetAmount();
+            amount.Should().Be(10);
+        }
+
 
     }
 }
