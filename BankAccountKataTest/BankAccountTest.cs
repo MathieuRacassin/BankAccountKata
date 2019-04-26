@@ -24,7 +24,7 @@ namespace BankAccountKataTest
             BankAccount bankAccount = new BankAccount();
             Deposit deposit = new Deposit(10);
 
-            bankAccount.MakeDeposit(10);
+            bankAccount.MakeDepositOf(10);
 
             double amount = bankAccount.GetAmount();
 
@@ -36,9 +36,9 @@ namespace BankAccountKataTest
         {
             Client client = new Client();
 
-            client.BankAccount.MakeDeposit(10);
-            client.BankAccount.MakeDeposit(10);
-            client.BankAccount.MakeDeposit(10);
+            client.BankAccount.MakeDepositOf(10);
+            client.BankAccount.MakeDepositOf(10);
+            client.BankAccount.MakeDepositOf(10);
 
             double amount = client.BankAccount.GetAmount();
 
@@ -54,6 +54,16 @@ namespace BankAccountKataTest
             double withdrawal = client.BankAccount.MakeWithDrawalOf(withDrawalAmount);
 
             withdrawal.Should().Be(10);
+        }
+
+        [TestMethod]
+        public void ClientGetAmountBankAccountShouldGiveAmountOfTheBankAccount()
+        {
+            Client client = new Client();
+            client.BankAccount.MakeDepositOf(10);
+            client.BankAccount.MakeWithDrawalOf(5);
+            client.BankAccount.MakeDepositOf(10);
+            client.BankAccount.MakeWithDrawalOf(5);
         }
 
 

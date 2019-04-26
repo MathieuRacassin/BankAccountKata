@@ -22,7 +22,7 @@ namespace BankAccountKata
             return amount;
         }
 
-        public void MakeDeposit(double depositAmount)
+        public void MakeDepositOf(double depositAmount)
         {
             Deposit deposit = new Deposit(depositAmount);
             this.operations.AddOperation(deposit);

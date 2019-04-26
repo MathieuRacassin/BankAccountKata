@@ -2,7 +2,7 @@
 {
     public class Client
     {
-        public BankAccount bankAccount;
+        private BankAccount bankAccount;
 
         public Client()
         {
