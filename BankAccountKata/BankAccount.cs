@@ -32,7 +32,8 @@ namespace BankAccountKata
         {
             WithDrawal withDrawal = new WithDrawal(withDrawalAmount);
             this.operations.AddOperation(withDrawal);
-            return 10;
+
+            return withDrawalAmount;
         }
 
     }
