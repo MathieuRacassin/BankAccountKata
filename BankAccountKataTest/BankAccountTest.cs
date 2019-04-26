@@ -32,33 +32,22 @@ namespace BankAccountKataTest
         }
 
         [TestMethod]
-        public void GetAmountOnNewBankAccountWithThreeDepositsShouldGiveTheSumOfTheThreeDeposits()
+        public void ClientMakesThreeDepositsOnHisNewBankAccountWithShouldGiveTheSumOfTheThreeDeposits()
         {
-            BankAccount bankAccount = new BankAccount();
+            Client client = new Client();
             Deposit deposit1 = new Deposit(10);
             Deposit deposit2 = new Deposit(10);
             Deposit deposit3 = new Deposit(10);
 
-            bankAccount.MakeDeposit(deposit1);
-            bankAccount.MakeDeposit(deposit2);
-            bankAccount.MakeDeposit(deposit3);
+            client.BankAccount.MakeDeposit(deposit1);
+            client.BankAccount.MakeDeposit(deposit2);
+            client.BankAccount.MakeDeposit(deposit3);
 
-            double amount = bankAccount.GetAmount();
+            double amount = client.BankAccount.GetAmount();
 
             amount.Should().Be(30);
         }
 
-        [TestMethod]
-        public void ClientMakeOneDepositOnHisBankAccount()
-        {
-            Client client = new Client();
-            Deposit deposit1 = new Deposit(10);
-
-            client.BankAccount.MakeDeposit(deposit1);
-
-            double amount = client.BankAccount.GetAmount();
-            amount.Should().Be(10);
-        }
 
 
     }
