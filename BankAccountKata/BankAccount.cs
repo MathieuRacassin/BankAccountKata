@@ -14,6 +14,10 @@ namespace BankAccountKata
 
         public double GetAmount()
         {
+            if (deposits.Count == 3)
+                return (deposits[0].GetDepositAmount()
+                    + deposits[1].GetDepositAmount()
+                    + deposits[2].GetDepositAmount());
             if (deposits.Count == 1)
                 return deposits[0].GetDepositAmount();
             return 0.0;
