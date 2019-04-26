@@ -6,10 +6,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace BankAccountKataTest
 {
     [TestClass]
-    public class ClientOperationTest
+    public class BankAccountTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void NewBankAccountShouldHaveAmountZero()
         {
             BankAccount bankAccount = new BankAccount();
 
