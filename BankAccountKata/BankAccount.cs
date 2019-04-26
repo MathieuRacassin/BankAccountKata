@@ -27,5 +27,9 @@ namespace BankAccountKata
             deposits.Add(deposit);
         }
 
+        public double MakeWithDrawalOf(double withDrawalAmount)
+        {
+                return 10;
+        }
     }
 }

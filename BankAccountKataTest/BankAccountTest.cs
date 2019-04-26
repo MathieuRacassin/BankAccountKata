@@ -48,6 +48,17 @@ namespace BankAccountKataTest
             amount.Should().Be(30);
         }
 
+        [TestMethod]
+        public void MyTestMethod()
+        {
+            Client client = new Client();
+            double withDrawalAmount = 10;
+
+            double withdrawal = client.BankAccount.MakeWithDrawalOf(withDrawalAmount);
+
+            withdrawal.Should().Be(10);
+        }
+
 
 
     }
