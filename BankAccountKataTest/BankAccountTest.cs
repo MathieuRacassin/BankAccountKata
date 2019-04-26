@@ -64,6 +64,10 @@ namespace BankAccountKataTest
             client.BankAccount.MakeWithDrawalOf(5);
             client.BankAccount.MakeDepositOf(10);
             client.BankAccount.MakeWithDrawalOf(5);
+
+            double amount = client.BankAccount.GetAmount();
+
+            amount.Should().Be(10);
         }
 
 

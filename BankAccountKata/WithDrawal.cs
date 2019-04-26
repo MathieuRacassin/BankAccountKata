@@ -8,7 +8,7 @@ namespace BankAccountKata
 {
     public class WithDrawal : Operation
     {
-        public WithDrawal(double amount) : base(amount)
+        public WithDrawal(double amount) : base(-amount)
         {
         }
 

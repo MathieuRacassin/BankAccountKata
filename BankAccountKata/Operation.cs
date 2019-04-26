@@ -8,13 +8,31 @@ namespace BankAccountKata
 {
     public abstract class Operation
     {
-        public double amount;
+        protected DateTime date;
+
+        protected double amount;
 
         public Operation(double amount)
         {
             this.amount = amount;
         }
 
+        public Operation(DateTime date, double amount)
+        {
+            this.date = date;
+            this.amount = amount;
+        }
+
         public abstract double GetOperationAmount();
+
+        public override string ToString()
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append(this.date);
+            stringBuilder.Append(" ");
+            stringBuilder.Append(this.amount);
+
+            return stringBuilder.ToString();
+        }
     }
 }

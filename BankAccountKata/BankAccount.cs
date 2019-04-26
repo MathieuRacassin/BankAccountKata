@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace BankAccountKata
 {
@@ -34,6 +35,25 @@ namespace BankAccountKata
             this.operations.AddOperation(withDrawal);
 
             return withDrawalAmount;
+        }
+
+        public string PrintOperationsHistory()
+        {
+            StringBuilder historyBuilder = new StringBuilder();
+
+            historyBuilder.AppendLine("Bank Account History");
+            historyBuilder.Append("Enable Amount : ");
+            historyBuilder.Append(GetAmount());
+            historyBuilder.AppendLine();
+
+
+            foreach(Operation operation in this.operations.OperationList)
+            {
+                historyBuilder.Append(operation.ToString());
+                historyBuilder.AppendLine();
+            }
+
+            return historyBuilder.ToString();
         }
 
     }
