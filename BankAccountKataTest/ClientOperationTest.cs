@@ -17,5 +17,18 @@ namespace BankAccountKataTest
 
             amount.Should().Be(0);
         }
+
+        [TestMethod]
+        public void BankAccountWithOneDepositShouldReturnTheDepositAmount()
+        {
+            BankAccount bankAccount = new BankAccount();
+            Deposit deposit = new Deposit(10);
+
+            bankAccount.MakeDeposit(deposit);
+
+            double amount = bankAccount.GetAmount();
+
+            amount.Should().Be(10);
+        }
     }
 }
