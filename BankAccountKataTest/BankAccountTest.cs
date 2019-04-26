@@ -49,7 +49,7 @@ namespace BankAccountKataTest
         }
 
         [TestMethod]
-        public void MyTestMethod()
+        public void ClientOneWithdrawalOnHisBankAccount()
         {
             Client client = new Client();
             double withDrawalAmount = 10;

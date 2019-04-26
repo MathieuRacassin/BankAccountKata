@@ -5,26 +5,26 @@ namespace BankAccountKata
 {
     public class BankAccount
     {
-        private List<Deposit> deposits;
+        private Operations operations;
 
         public BankAccount()
         {
-            this.deposits = new List<Deposit>();
+            this.operations = new Operations();
         }
 
         public double GetAmount()
         {
             double amount = 0;
-            foreach(Deposit deposit in this.deposits)
+            foreach(Operation operation in this.operations.OperationList)
             {
-                amount = amount + deposit.GetDepositAmount();
+                amount = amount + operation.GetOperationAmount();
             }
             return amount;
         }
 
         public void MakeDeposit(Deposit deposit)
         {
-            deposits.Add(deposit);
+            operations.OperationList.Add(deposit);
         }
 
         public double MakeWithDrawalOf(double withDrawalAmount)

@@ -2,18 +2,16 @@
 
 namespace BankAccountKata
 {
-    public class Deposit
+    public class Deposit : Operation
     {
-        private double deposit;
 
-        public Deposit(double deposit)
+        public Deposit(double amount) : base(amount)
         {
-            this.deposit = deposit;
         }
 
-        public double GetDepositAmount()
+        public override double GetOperationAmount()
         {
-            return this.deposit;
+            return base.amount;
         }
     }
 }
