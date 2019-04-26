@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankAccountKata", "BankAccountKata\BankAccountKata.csproj", "{D84A2DED-537E-4F62-AD0B-22A242A07E29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankAccountKataTest", "BankAccountKataTest\BankAccountKataTest.csproj", "{F3D6B8C8-7036-4DBA-A41D-01CCDB3EE9CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D84A2DED-537E-4F62-AD0B-22A242A07E29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D84A2DED-537E-4F62-AD0B-22A242A07E29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D84A2DED-537E-4F62-AD0B-22A242A07E29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D84A2DED-537E-4F62-AD0B-22A242A07E29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3D6B8C8-7036-4DBA-A41D-01CCDB3EE9CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3D6B8C8-7036-4DBA-A41D-01CCDB3EE9CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3D6B8C8-7036-4DBA-A41D-01CCDB3EE9CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3D6B8C8-7036-4DBA-A41D-01CCDB3EE9CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AA4C285E-95E9-422F-BD65-6A05AC705528}
+	EndGlobalSection
+EndGlobal
