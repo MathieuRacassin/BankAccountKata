@@ -9,7 +9,7 @@ namespace BankAccountKataTest
     public class BankAccountTest
     {
         [TestMethod]
-        public void NewBankAccountShouldHaveAmountZero()
+        public void GetAmountWithNewBankAccountShouldHaveAmountZero()
         {
             BankAccount bankAccount = new BankAccount();
 
@@ -19,7 +19,7 @@ namespace BankAccountKataTest
         }
 
         [TestMethod]
-        public void BankAccountWithOneDepositShouldReturnTheDepositAmount()
+        public void GetAmountWithOneDepositShouldGiveTheDepositAmount()
         {
             BankAccount bankAccount = new BankAccount();
             Deposit deposit = new Deposit(10);
@@ -30,5 +30,7 @@ namespace BankAccountKataTest
 
             amount.Should().Be(10);
         }
+
+
     }
 }
