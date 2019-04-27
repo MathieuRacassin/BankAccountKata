@@ -19,20 +19,7 @@ namespace BankAccountKataTest
         }
 
         [TestMethod]
-        public void GetAmountWithOneDepositShouldGiveTheDepositAmount()
-        {
-            BankAccount bankAccount = new BankAccount();
-            Deposit deposit = new Deposit(10);
-
-            bankAccount.MakeDepositOf(10);
-
-            double amount = bankAccount.GetAmount();
-
-            amount.Should().Be(10);
-        }
-
-        [TestMethod]
-        public void ClientMakesThreeDepositsOnHisNewBankAccountWithShouldGiveTheSumOfTheThreeDeposits()
+        public void ClientMakesThreeDepositsOf10OnHisNewBankAccountGetAmountShouldGive30()
         {
             Client client = new Client();
 
@@ -46,18 +33,19 @@ namespace BankAccountKataTest
         }
 
         [TestMethod]
-        public void ClientOneWithdrawalOnHisBankAccount()
+        public void ClientMakesOneWithdrawalOf10GetAmountShouldGiveMinus10()
         {
             Client client = new Client();
             double withDrawalAmount = 10;
 
-            double withdrawal = client.BankAccount.MakeWithDrawalOf(withDrawalAmount);
+            client.BankAccount.MakeWithDrawalOf(withDrawalAmount);
+            double amount = client.BankAccount.GetAmount();
 
-            withdrawal.Should().Be(10);
+            amount.Should().Be(-10);
         }
 
         [TestMethod]
-        public void ClientGetAmountBankAccountShouldGiveAmountOfTheBankAccount()
+        public void ClientMakesTwoDepositsOf10AndTwoWithdrawalOfFiveGetAmountShould10()
         {
             Client client = new Client();
             client.BankAccount.MakeDepositOf(10);
@@ -69,8 +57,5 @@ namespace BankAccountKataTest
 
             amount.Should().Be(10);
         }
-
-
-
     }
 }

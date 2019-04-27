@@ -29,12 +29,10 @@ namespace BankAccountKata
             this.operations.AddOperation(deposit);
         }
 
-        public double MakeWithDrawalOf(double withDrawalAmount)
+        public void MakeWithDrawalOf(double withDrawalAmount)
         {
             WithDrawal withDrawal = new WithDrawal(withDrawalAmount);
             this.operations.AddOperation(withDrawal);
-
-            return withDrawalAmount;
         }
 
         public string PrintOperationsHistory()
