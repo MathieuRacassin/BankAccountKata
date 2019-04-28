@@ -58,12 +58,23 @@ namespace BankAccountKataTest
         public void ClientMakesOneWithdrawalOf10OnExistingBankAccountShouldGiveZero()
         {
             Client client = CreateClientWithExistingBankAccount();
-            double withDrawalAmount = 10;
 
-            client.BankAccount.MakeWithDrawalOf(withDrawalAmount);
+            client.BankAccount.MakeWithDrawalOf(10);
             double amount = client.BankAccount.GetAmount();
 
             amount.Should().Be(0);
+        }
+
+        [TestMethod]
+        public void ClientGetBalanceOfHisAccount()
+        {
+            Client client = CreateClientWithExistingBankAccount();
+            DateTime from = new DateTime(2019, 04, 26);
+            DateTime to = from.AddHours(6);
+
+            double balance = client.BankAccount.GetBalanceBetween(from, to);
+
+            balance.Should().Be(15);
         }
 
         private static Client CreateClientWithExistingBankAccount()

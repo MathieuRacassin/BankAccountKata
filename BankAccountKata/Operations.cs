@@ -30,6 +30,19 @@ namespace BankAccountKata
             return sum;
         }
 
+        public Operations GetOperationsBetween(DateTime from, DateTime to)
+        {
+            Operations newOperations = new Operations();
+            foreach (Operation operation in this.operations)
+            {
+                if( operation.Date >= from && operation.Date <= to)
+                {
+                    newOperations.AddOperation(operation);
+                }
+            }
+            return newOperations;
+        }
+
         public override string ToString()
         {
             StringBuilder operations = new StringBuilder();

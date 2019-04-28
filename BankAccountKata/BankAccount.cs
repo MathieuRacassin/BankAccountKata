@@ -54,5 +54,10 @@ namespace BankAccountKata
         {
             return new BankAccount(operations);
         }
+
+        public double GetBalanceBetween(DateTime from, DateTime to)
+        {
+            return this.operations.GetOperationsBetween(from, to).OperationsSum();
+        }
     }
 }

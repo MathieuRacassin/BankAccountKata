@@ -17,6 +17,14 @@ namespace BankAccountKata
             this.amount = amount;
         }
 
+        public DateTime Date
+        {
+            get
+            {
+                return this.date;
+            }
+        }
+
         public Operation(DateTime date, double amount)
         {
             this.date = date;
