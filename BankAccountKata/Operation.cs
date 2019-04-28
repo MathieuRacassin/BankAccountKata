@@ -9,8 +9,13 @@ namespace BankAccountKata
     public abstract class Operation
     {
         protected DateTime date;
-
         protected double amount;
+
+        public Operation(DateTime date, double amount)
+        {
+            this.date = date;
+            this.amount = amount;
+        }
 
         public DateTime Date
         {
@@ -18,12 +23,6 @@ namespace BankAccountKata
             {
                 return this.date;
             }
-        }
-
-        public Operation(DateTime date, double amount)
-        {
-            this.date = date;
-            this.amount = amount;
         }
 
         public double GetOperationAmount()
