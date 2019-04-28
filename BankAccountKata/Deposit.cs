@@ -4,14 +4,8 @@ namespace BankAccountKata
 {
     public class Deposit : Operation
     {
-
-        public Deposit(double amount) : base(amount)
+        public Deposit(DateTime date, double amount):base(date, amount)
         {
-        }
-
-        public override double GetOperationAmount()
-        {
-            return base.amount;
         }
     }
 }

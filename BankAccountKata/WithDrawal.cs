@@ -6,15 +6,10 @@ using System.Threading.Tasks;
 
 namespace BankAccountKata
 {
-    public class WithDrawal : Operation
+    public class Withdrawal : Operation
     {
-        public WithDrawal(double amount) : base(-amount)
+        public Withdrawal(DateTime date, double amount) : base(date, -amount)
         {
-        }
-
-        public override double GetOperationAmount()
-        {
-            return base.amount;
         }
     }
 }

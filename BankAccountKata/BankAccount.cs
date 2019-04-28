@@ -13,25 +13,27 @@ namespace BankAccountKata
             this.operations = new Operations();
         }
 
+        private BankAccount(Operations operations)
+        {
+            this.operations = operations;
+        }
+
         public double GetAmount()
         {
-            double amount = 0;
-            foreach(Operation operation in this.operations.OperationList)
-            {
-                amount = amount + operation.GetOperationAmount();
-            }
-            return amount;
+            return this.operations.OperationsSum();
         }
 
         public void MakeDepositOf(double depositAmount)
         {
-            Deposit deposit = new Deposit(depositAmount);
+            DateTime date = DateTime.MinValue;
+            Deposit deposit = new Deposit(date, depositAmount);
             this.operations.AddOperation(deposit);
         }
 
         public void MakeWithDrawalOf(double withDrawalAmount)
         {
-            WithDrawal withDrawal = new WithDrawal(withDrawalAmount);
+            DateTime date = DateTime.MinValue;
+            Withdrawal withDrawal = new Withdrawal(date,withDrawalAmount);
             this.operations.AddOperation(withDrawal);
         }
 
@@ -43,16 +45,14 @@ namespace BankAccountKata
             historyBuilder.Append("Enable Amount : ");
             historyBuilder.Append(GetAmount());
             historyBuilder.AppendLine();
-
-
-            foreach(Operation operation in this.operations.OperationList)
-            {
-                historyBuilder.Append(operation.ToString());
-                historyBuilder.AppendLine();
-            }
+            historyBuilder.AppendLine(this.operations.ToString());
 
             return historyBuilder.ToString();
         }
 
+        public static BankAccount CreateWithExistingOperations(Operations operations)
+        {
+            return new BankAccount(operations);
+        }
     }
 }

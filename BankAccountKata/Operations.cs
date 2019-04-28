@@ -20,12 +20,24 @@ namespace BankAccountKata
             this.operations.Add(operation);
         }
 
-        public List<Operation> OperationList
+        public double OperationsSum()
         {
-            get
+            double sum = 0;
+            foreach (Operation operation in this.operations)
             {
-                return this.operations;
+                sum = sum + operation.GetOperationAmount();
             }
+            return sum;
+        }
+
+        public override string ToString()
+        {
+            StringBuilder operations = new StringBuilder();
+            foreach (Operation operation in this.operations)
+            {
+                operations.AppendLine(operation.ToString());
+            }
+            return operations.ToString();
         }
 
     }

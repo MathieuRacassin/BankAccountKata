@@ -23,7 +23,10 @@ namespace BankAccountKata
             this.amount = amount;
         }
 
-        public abstract double GetOperationAmount();
+        public double GetOperationAmount()
+        {
+            return this.amount;
+        }
 
         public override string ToString()
         {
