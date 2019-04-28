@@ -37,17 +37,34 @@ namespace BankAccountKata
             this.operations.AddOperation(withDrawal);
         }
 
-        public string PrintOperationsHistory()
+        public string PrintOperationsHistoryBetween(DateTime from, DateTime to)
         {
             StringBuilder historyBuilder = new StringBuilder();
 
             historyBuilder.AppendLine("Bank Account History");
+            historyBuilder.Append("From : ");
+            historyBuilder.Append(from);
+
+            historyBuilder.Append(" To : ");
+            historyBuilder.Append(to);
+            historyBuilder.AppendLine();
+
             historyBuilder.Append("Enable Amount : ");
             historyBuilder.Append(GetAmount());
             historyBuilder.AppendLine();
-            historyBuilder.AppendLine(this.operations.ToString());
+
+            historyBuilder.Append("Enable Balance : ");
+            historyBuilder.Append(GetBalanceBetween(from, to));
+
+            historyBuilder.AppendLine();
+            historyBuilder.AppendLine(this.operations.GetOperationsBetween(from, to).ToString());
 
             return historyBuilder.ToString();
+        }
+
+        public string PrintCompleteOperationsHistory()
+        {
+            return PrintOperationsHistoryBetween(DateTime.MinValue, DateTime.MaxValue);
         }
 
         public static BankAccount CreateWithExistingOperations(Operations operations)

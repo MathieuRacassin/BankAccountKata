@@ -12,11 +12,6 @@ namespace BankAccountKata
 
         protected double amount;
 
-        public Operation(double amount)
-        {
-            this.amount = amount;
-        }
-
         public DateTime Date
         {
             get
