@@ -14,13 +14,7 @@
             this.bankAccount = bankAccount;
         }
 
-        public BankAccount BankAccount
-        {
-            get
-            {
-                return this.bankAccount;
-            }
-        }
+        public BankAccount BankAccount => bankAccount;
 
         public static Client CreateWithBankAccount(BankAccount bankAccount)
         {

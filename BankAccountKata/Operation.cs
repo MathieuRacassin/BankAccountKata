@@ -8,21 +8,13 @@ namespace BankAccountKata
 {
     public abstract class Operation
     {
-        protected DateTime date;
-        protected double amount;
+        private readonly DateTime date;
+        private readonly double amount;
 
         public Operation(DateTime date, double amount)
         {
             this.date = date;
             this.amount = amount;
-        }
-
-        public DateTime Date
-        {
-            get
-            {
-                return this.date;
-            }
         }
 
         public double Amount
@@ -36,11 +28,16 @@ namespace BankAccountKata
         public override string ToString()
         {
             StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.Append(this.date);
+            stringBuilder.Append(date);
             stringBuilder.Append(" ");
             stringBuilder.Append(this.amount);
 
             return stringBuilder.ToString();
+        }
+
+        public bool DateIsBetween(DateTime from, DateTime to)
+        {
+            return this.date >= from && this.date <= to;
         }
     }
 }

@@ -12,18 +12,18 @@ namespace BankAccountKata
 
         public Operations()
         {
-            this.operations = new List<Operation>();
+            operations = new List<Operation>();
         }
 
         public void AddOperation(Operation operation)
         {
-            this.operations.Add(operation);
+            operations.Add(operation);
         }
 
         public double OperationsSum()
         {
             double sum = 0;
-            foreach (Operation operation in this.operations)
+            foreach (Operation operation in operations)
             {
                 sum = sum + operation.Amount;
             }
@@ -33,9 +33,9 @@ namespace BankAccountKata
         public Operations GetOperationsBetween(DateTime from, DateTime to)
         {
             Operations newOperations = new Operations();
-            foreach (Operation operation in this.operations)
+            foreach (Operation operation in operations)
             {
-                if( operation.Date >= from && operation.Date <= to)
+                if(operation.DateIsBetween(from, to))
                 {
                     newOperations.AddOperation(operation);
                 }

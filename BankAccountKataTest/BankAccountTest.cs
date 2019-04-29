@@ -120,6 +120,12 @@ namespace BankAccountKataTest
             bankHistory.Should().Be(bankHistoryExpected.ToString().Trim());
         }
 
+        [TestMethod]
+        public void VisitorShouldReturn()
+        {
+
+        }
+
         private static Client CreateClientWithExistingBankAccount()
         {
             DateTime date = new DateTime(2019, 04, 26);

@@ -10,7 +10,7 @@ namespace BankAccountKata
 
         public BankAccount()
         {
-            this.operations = new Operations();
+            operations = new Operations();
         }
 
         private BankAccount(Operations operations)
@@ -20,21 +20,23 @@ namespace BankAccountKata
 
         public double GetAmount()
         {
-            return this.operations.OperationsSum();
+            return operations.OperationsSum();
         }
 
         public void MakeDepositOf(double depositAmount)
         {
-            DateTime date = DateTime.MinValue;
+            DateTime date = DateTime.UtcNow;
             Deposit deposit = new Deposit(date, depositAmount);
-            this.operations.AddOperation(deposit);
+
+            operations.AddOperation(deposit);
         }
 
         public void MakeWithDrawalOf(double withDrawalAmount)
         {
-            DateTime date = DateTime.MinValue;
+            DateTime date = DateTime.UtcNow;
             Withdrawal withDrawal = new Withdrawal(date,withDrawalAmount);
-            this.operations.AddOperation(withDrawal);
+
+            operations.AddOperation(withDrawal);
         }
 
         public string PrintOperationsHistoryBetween(DateTime from, DateTime to)
@@ -57,7 +59,7 @@ namespace BankAccountKata
             historyBuilder.Append(GetBalanceBetween(from, to));
 
             historyBuilder.AppendLine();
-            historyBuilder.AppendLine(this.operations.GetOperationsBetween(from, to).ToString());
+            historyBuilder.AppendLine(operations.GetOperationsBetween(from, to).ToString());
 
             return historyBuilder.ToString();
         }
