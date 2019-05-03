@@ -6,7 +6,7 @@ namespace BankAccountKata
 {
     public class BankAccount
     {
-        private Operations operations;
+        private readonly Operations operations;
 
         public BankAccount()
         {
@@ -37,6 +37,16 @@ namespace BankAccountKata
             Withdrawal withDrawal = new Withdrawal(date,withDrawalAmount);
 
             operations.AddOperation(withDrawal);
+        }
+
+        public void MakeDeposit(Deposit deposit)
+        {
+            operations.AddOperation(deposit);
+        }
+
+        public void MakeWithDrawal(Withdrawal withdrawal)
+        {
+            operations.AddOperation(withdrawal);
         }
 
         public string PrintCompleteOperationsHistory()

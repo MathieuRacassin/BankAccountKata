@@ -14,11 +14,6 @@
             BankAccount = bankAccount;
         }
 
-        public static Client CreateWithBankAccount(BankAccount bankAccount)
-        {
-            return new Client(bankAccount);
-        }
-
         public static Client CreateClientWithNoBankAccount()
         {
             return new Client();
