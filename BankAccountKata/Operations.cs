@@ -25,7 +25,7 @@ namespace BankAccountKata
             double sum = 0;
             foreach (Operation operation in operations)
             {
-                sum = sum + operation.Amount;
+                sum += operation.Amount;
             }
             return sum;
         }
