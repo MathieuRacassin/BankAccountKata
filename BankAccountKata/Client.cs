@@ -2,23 +2,26 @@
 {
     public class Client
     {
-        private BankAccount bankAccount;
-
-        public Client()
+        private Client()
         {
-            this.bankAccount = new BankAccount();
+            BankAccount = new BankAccount();
         }
+
+        public BankAccount BankAccount { get; }
 
         private Client(BankAccount bankAccount)
         {
-            this.bankAccount = bankAccount;
+            BankAccount = bankAccount;
         }
-
-        public BankAccount BankAccount => bankAccount;
 
         public static Client CreateWithBankAccount(BankAccount bankAccount)
         {
             return new Client(bankAccount);
+        }
+
+        public static Client CreateClientWithNoBankAccount()
+        {
+            return new Client();
         }
     }
 }

@@ -39,6 +39,21 @@ namespace BankAccountKata
             operations.AddOperation(withDrawal);
         }
 
+        public string PrintCompleteOperationsHistory()
+        {
+            return PrintOperationsHistoryBetween(DateTime.MinValue, DateTime.MaxValue);
+        }
+
+        public static BankAccount CreateWithExistingOperations(Operations operations)
+        {
+            return new BankAccount(operations);
+        }
+
+        public double GetBalanceBetween(DateTime from, DateTime to)
+        {
+            return this.operations.GetOperationsBetween(from, to).OperationsSum();
+        }
+
         public string PrintOperationsHistoryBetween(DateTime from, DateTime to)
         {
             StringBuilder historyBuilder = new StringBuilder();
@@ -64,19 +79,5 @@ namespace BankAccountKata
             return historyBuilder.ToString();
         }
 
-        public string PrintCompleteOperationsHistory()
-        {
-            return PrintOperationsHistoryBetween(DateTime.MinValue, DateTime.MaxValue);
-        }
-
-        public static BankAccount CreateWithExistingOperations(Operations operations)
-        {
-            return new BankAccount(operations);
-        }
-
-        public double GetBalanceBetween(DateTime from, DateTime to)
-        {
-            return this.operations.GetOperationsBetween(from, to).OperationsSum();
-        }
     }
 }

@@ -12,7 +12,7 @@ namespace BankAccountKataTest
         [TestMethod]
         public void ClientWithNewBankAccountShouldHaveAmountZero()
         {
-            Client client = CreateClientWithNoBankAccount();
+            Client client = Client.CreateClientWithNoBankAccount();
 
             double amount = client.BankAccount.GetAmount();
 
@@ -22,7 +22,7 @@ namespace BankAccountKataTest
         [TestMethod]
         public void ClientMakesOneDepositOf10OnNewBankAccountGetAmountShouldGive10()
         {
-            Client client = CreateClientWithNoBankAccount();
+            Client client = Client.CreateClientWithNoBankAccount();
 
             client.BankAccount.MakeDepositOf(10);
 
@@ -34,7 +34,7 @@ namespace BankAccountKataTest
         [TestMethod]
         public void ClientMakesOneWithdrawalOf10OnNewBankAccountGetAmountShouldGiveMinus10()
         {
-            Client client = CreateClientWithNoBankAccount();
+            Client client = Client.CreateClientWithNoBankAccount();
 
             client.BankAccount.MakeWithDrawalOf(10);
 
@@ -140,11 +140,6 @@ namespace BankAccountKataTest
             Client client = Client.CreateWithBankAccount(bankAccount);
 
             return client;
-        }
-
-        private static Client CreateClientWithNoBankAccount()
-        {
-            return new Client();
         }
     }
 }
