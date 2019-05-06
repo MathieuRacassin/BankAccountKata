@@ -54,10 +54,6 @@ namespace BankAccountKata
             return PrintOperationsHistoryBetween(DateTime.MinValue, DateTime.MaxValue);
         }
 
-        public static BankAccount CreateWithExistingOperations(Operations operations)
-        {
-            return new BankAccount(operations);
-        }
 
         public double GetBalanceBetween(DateTime from, DateTime to)
         {
